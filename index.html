@@ -1,127 +1,131 @@
-
 <!doctype html>
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fred Official Site</title>
+<title>Fred Official Website</title>
 
 <style>
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
-  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg,#111,#222);
+  color: white;
   text-align: center;
-  background: #f4f4f4;
+  padding: 40px 20px;
 }
 
 h1 {
   font-size: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 40px;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 340px;
+  gap: 20px;
+  max-width: 360px;
   margin: auto;
 }
 
-a.button {
-  text-decoration: none;
-  background: black;
-  color: white;
-  padding: 14px;
-  border-radius: 12px;
+.button {
+  background: white;
+  color: black;
+  padding: 16px;
+  border-radius: 30px;
   font-size: 18px;
-  display: block;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-a.button:hover {
-  background: #444;
+.button:hover {
+  transform: scale(1.05);
+  background: #00d4ff;
+  color: white;
 }
 
 .page {
   display: none;
   max-width: 600px;
   margin: auto;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .back {
   margin-top: 30px;
   display: inline-block;
-  background: #666;
-  padding: 10px 18px;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
+  background: #444;
+  padding: 12px 24px;
+  border-radius: 30px;
   cursor: pointer;
+}
+
+img.profile {
+  width: 140px;
+  border-radius: 50%;
+  margin: 20px 0;
 }
 </style>
 
 <script>
-function showPage(id) {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("about").style.display = "none";
-  document.getElementById("travel").style.display = "none";
-  document.getElementById("pingpong").style.display = "none";
-  document.getElementById("bella").style.display = "none";
-  document.getElementById(id).style.display = "block";
+function showPage(id){
+  document.getElementById("home").style.display="none";
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+  document.getElementById(id).style.display="block";
 }
-
-function goHome() {
-  document.getElementById("home").style.display = "block";
-  document.getElementById("about").style.display = "none";
-  document.getElementById("travel").style.display = "none";
-  document.getElementById("pingpong").style.display = "none";
-  document.getElementById("bella").style.display = "none";
+function goHome(){
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+  document.getElementById("home").style.display="block";
 }
 </script>
-
 </head>
+
 <body>
 
 <div id="home">
-<h1>歡迎來到 Fred 的世界</h1>
+<h1>Fred Official Website</h1>
+<div class="subtitle">IT • Travel • Ping Pong • Bella</div>
 
 <div class="menu">
-<a class="button" onclick="showPage('about')">👤 關於我</a>
-<a class="button" onclick="showPage('travel')">✈️ 我的旅遊日記</a>
-<a class="button" onclick="showPage('pingpong')">🏓 我的桌球人生</a>
-<a class="button" onclick="showPage('bella')">🐶 Bella專區</a>
+<div class="button" onclick="showPage('about')">👤 關於我</div>
+<div class="button" onclick="showPage('travel')">✈️ 我的旅遊日記</div>
+<div class="button" onclick="showPage('pingpong')">🏓 我的桌球人生</div>
+<div class="button" onclick="showPage('bella')">🐶 Bella專區</div>
 </div>
 </div>
 
 <div id="about" class="page">
 <h1>關於我</h1>
+<img class="profile" src="https://picsum.photos/200" />
 <p>我是 Fred，一位退休 IT 經理。</p>
-<p>喜歡寫作、研究技術、桌球與旅遊。</p>
-<p>正在享受慢步調的人生。</p>
+<p>熱愛科技、寫作與持續學習。</p>
+<p>現在的人生目標是：慢步調 + 高品質。</p>
 <div class="back" onclick="goHome()">回首頁</div>
 </div>
 
 <div id="travel" class="page">
 <h1>我的旅遊日記</h1>
-<p>✈️ 我去過日本、MSC 郵輪、澎湖等地方。</p>
-<p>旅行讓我看到不同的世界。</p>
+<p>✈️ 日本、MSC 郵輪、澎湖。</p>
+<p>旅行是我與世界對話的方式。</p>
 <div class="back" onclick="goHome()">回首頁</div>
 </div>
 
 <div id="pingpong" class="page">
 <h1>我的桌球人生</h1>
-<p>🏓 每週固定訓練三次。</p>
-<p>退休後開始更認真打桌球。</p>
-<p>運動讓身體與心都年輕。</p>
+<p>🏓 每週固定練習。</p>
+<p>運動讓身心保持年輕。</p>
 <div class="back" onclick="goHome()">回首頁</div>
 </div>
 
 <div id="bella" class="page">
 <h1>Bella 專區 🐶</h1>
 <p>Bella 是我們家的寶貝。</p>
-<p>她陪伴我們很多年，是家人也是朋友。</p>
-<p>每天帶她散步，是我最幸福的時刻。</p>
+<p>每天散步是最幸福的時刻。</p>
 <div class="back" onclick="goHome()">回首頁</div>
 </div>
 
