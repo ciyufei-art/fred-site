@@ -1,32 +1,128 @@
+
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fred Site</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      padding: 24px;
-      line-height: 1.6;
-    }
-    h1 {
-      margin-bottom: 12px;
-    }
-    .box {
-      padding: 16px;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fred Official Site</title>
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 340px;
+  margin: auto;
+}
+
+a.button {
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 18px;
+  display: block;
+}
+
+a.button:hover {
+  background: #444;
+}
+
+.page {
+  display: none;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.back {
+  margin-top: 30px;
+  display: inline-block;
+  background: #666;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function showPage(id) {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("about").style.display = "none";
+  document.getElementById("travel").style.display = "none";
+  document.getElementById("pingpong").style.display = "none";
+  document.getElementById("bella").style.display = "none";
+  document.getElementById(id).style.display = "block";
+}
+
+function goHome() {
+  document.getElementById("home").style.display = "block";
+  document.getElementById("about").style.display = "none";
+  document.getElementById("travel").style.display = "none";
+  document.getElementById("pingpong").style.display = "none";
+  document.getElementById("bella").style.display = "none";
+}
+</script>
+
 </head>
 <body>
 
-<h1>🎉 Fred Site is working!</h1>
+<div id="home">
+<h1>歡迎來到 Fred 的世界</h1>
 
-<div class="box">
-  如果你看到這行，GitHub Pages 已經成功了。
+<div class="menu">
+<a class="button" onclick="showPage('about')">👤 關於我</a>
+<a class="button" onclick="showPage('travel')">✈️ 我的旅遊日記</a>
+<a class="button" onclick="showPage('pingpong')">🏓 我的桌球人生</a>
+<a class="button" onclick="showPage('bella')">🐶 Bella專區</a>
+</div>
+</div>
+
+<div id="about" class="page">
+<h1>關於我</h1>
+<p>我是 Fred，一位退休 IT 經理。</p>
+<p>喜歡寫作、研究技術、桌球與旅遊。</p>
+<p>正在享受慢步調的人生。</p>
+<div class="back" onclick="goHome()">回首頁</div>
+</div>
+
+<div id="travel" class="page">
+<h1>我的旅遊日記</h1>
+<p>✈️ 我去過日本、MSC 郵輪、澎湖等地方。</p>
+<p>旅行讓我看到不同的世界。</p>
+<div class="back" onclick="goHome()">回首頁</div>
+</div>
+
+<div id="pingpong" class="page">
+<h1>我的桌球人生</h1>
+<p>🏓 每週固定訓練三次。</p>
+<p>退休後開始更認真打桌球。</p>
+<p>運動讓身體與心都年輕。</p>
+<div class="back" onclick="goHome()">回首頁</div>
+</div>
+
+<div id="bella" class="page">
+<h1>Bella 專區 🐶</h1>
+<p>Bella 是我們家的寶貝。</p>
+<p>她陪伴我們很多年，是家人也是朋友。</p>
+<p>每天帶她散步，是我最幸福的時刻。</p>
+<div class="back" onclick="goHome()">回首頁</div>
 </div>
 
 </body>
